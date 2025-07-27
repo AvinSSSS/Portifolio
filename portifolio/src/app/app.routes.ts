@@ -14,4 +14,8 @@ export const routes: Routes = [
     path: 'calculator',
     loadComponent: () => import('./pages/calculator/calculator.page').then( m => m.CalculatorPage)
   },
+  {
+    path: 'date-converter',
+    loadComponent: () => import('./pages/date-converter/date-converter.page').then( m => m.DateConverterPage)
+  },
 ];
