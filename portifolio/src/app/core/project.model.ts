@@ -26,7 +26,7 @@ export const PROJECTS: PortfolioProject[] = [
     problem: { pt: 'Ferramentas simples costumam estar escondidas em sites lentos e cheios de anúncios.', en: 'Simple tools are often buried in slow, ad-heavy websites.' },
     solution: { pt: 'Três calculadoras diretas para valor-hora, juros compostos e custo de deslocamento.', en: 'Three direct calculators for hourly rates, compound interest and commuting costs.' },
     stack: ['Ionic', 'Angular', 'TypeScript'], status: 'available',
-    repositoryUrl: 'https://github.com/AvinSSSS/HubCalculadoras', demoUrl: '/Portifolio/calculadoras',
+    repositoryUrl: 'https://github.com/AvinSSSS/HubCalculadoras', demoUrl: 'https://avinssss.github.io/HubCalculadoras/',
   },
   {
     slug: 'nfe', number: '02',

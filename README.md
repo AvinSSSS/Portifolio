@@ -13,7 +13,7 @@ Vitrine profissional bilíngue de **Andreus Vinicius**, desenvolvedor focado em 
 - Apresentação profissional em português e inglês.
 - Experiência, competências e processo de trabalho.
 - Catálogo tipado de cinco projetos com links para seus repositórios.
-- Hub com calculadoras de valor-hora, juros compostos e deslocamento.
+- Acesso ao Hub de Calculadoras publicado em seu próprio projeto.
 - Layout responsivo, tema escuro, acessibilidade e animações discretas.
 - SEO, Open Graph e fallback de rotas para GitHub Pages.
 
@@ -55,14 +55,14 @@ Portifólio/
 ├── portifolio/src/app/      # Aplicação Ionic/Angular
 │   ├── core/                 # Idioma e modelo dos projetos
 │   ├── home/                 # Vitrine profissional
-│   └── pages/calculator/     # Hub de calculadoras
+│   └── home/                 # Vitrine e catálogo de projetos
 ```
 
 Os repositórios dos projetos ficam separados em `D:\Fontes\Projetos`.
 
 ## 🔐 Privacidade
 
-As calculadoras executam integralmente no navegador e não enviam os valores preenchidos para servidores. Os resultados são estimativas educacionais e não constituem aconselhamento financeiro.
+O portfólio não coleta dados pessoais. As ferramentas interativas são mantidas e publicadas em seus próprios projetos.
 
 ## 📌 Antes da versão final
 
