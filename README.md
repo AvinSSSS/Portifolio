@@ -56,8 +56,9 @@ Portifólio/
 │   ├── core/                 # Idioma e modelo dos projetos
 │   ├── home/                 # Vitrine profissional
 │   └── pages/calculator/     # Hub de calculadoras
-└── projetos/               # Clones locais ignorados pelo Git principal
 ```
+
+Os repositórios dos projetos ficam separados em `D:\Fontes\Projetos`.
 
 ## 🔐 Privacidade
 
