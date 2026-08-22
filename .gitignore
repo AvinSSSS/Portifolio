@@ -1,0 +1,9 @@
+portifolio/node_modules/
+portifolio/www/
+portifolio/.angular/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
