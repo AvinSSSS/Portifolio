@@ -32,8 +32,8 @@ export const PROJECTS: PortfolioProject[] = [
     slug: 'nfe', number: '02',
     title: { pt: 'Descomplicador de NFe', en: 'NFe Explorer' },
     problem: { pt: 'Pastas com centenas de XMLs tornam uma consulta simples demorada e sujeita a erro.', en: 'Folders with hundreds of XML files make simple checks slow and error-prone.' },
-    solution: { pt: 'Aplicativo Windows que consolida documentos fiscais e exporta um relatório em CSV.', en: 'A Windows app that consolidates tax documents and exports a CSV report.' },
-    stack: ['Delphi', 'VCL', 'XML'], status: 'building',
+    solution: { pt: 'Aplicativo Windows local para pesquisar, ordenar, revisar e exportar lotes de NF-e com totalizadores e visualização do XML.', en: 'A local Windows app for searching, sorting, reviewing and exporting NFe batches with totals and formatted XML viewing.' },
+    stack: ['Delphi', 'VCL', 'XML', 'DUnitX'], status: 'building',
   },
   {
     slug: 'organizador-arquivos', number: '03',

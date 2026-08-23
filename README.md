@@ -22,7 +22,7 @@ Vitrine profissional bilíngue de **Andreus Vinicius**, desenvolvedor focado em 
 | Projeto | Stack | Situação |
 |---|---|---|
 | [Hub de Calculadoras](https://github.com/AvinSSSS/HubCalculadoras) | Ionic, Angular, TypeScript | MVP online |
-| [Descomplicador de NFe](https://github.com/AvinSSSS/DescomplicadorNFe) | Delphi, VCL, XML | Código do MVP |
+| [Descomplicador de NFe](https://github.com/AvinSSSS/DescomplicadorNFe) | Delphi, VCL, XML, DUnitX | Aplicativo desktop funcional |
 | [Organizador de Arquivos](https://github.com/AvinSSSS/OrganizadorArquivos) | Delphi, VCL, Windows | Código do MVP |
 | [Bot Utilitário para Discord](https://github.com/AvinSSSS/DiscordUtilityBot) | Node.js, discord.js, Docker | Código do MVP |
 | [Assistente de Orçamento e Laudo](https://github.com/AvinSSSS/AssistenteOrcamentoLaudo) | Python, Streamlit, Gemini | Código do MVP |
