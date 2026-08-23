@@ -28,7 +28,7 @@
 
     <section class="features shell">
       <p class="section-index">02 / {{ isPt() ? 'A SOLUÇÃO' : 'THE SOLUTION' }}</p>
-      <div class="section-heading"><h2>{{ isPt() ? 'Velocidade com' : 'Speed with' }}<br><em>{{ isPt() ? 'controle.' : 'control.' }}</em></h2><p>{{ isPt() ? 'O fluxo separa claramente configurar, revisar, executar e desfazer.' : 'The workflow clearly separates configuration, review, execution and undo.' }}</p></div>
+      <div class="section-heading"><h2>{{ isPt() ? 'Velocidade com' : 'Speed with' }}<br><em>{{ isPt() ? 'controle.' : 'control.' }}</em></h2><p>{{ isPt() ? 'O fluxo separa configurar, revisar, executar e desfazer — com rollback automático se algo falhar.' : 'The workflow separates configuration, review, execution and undo — with automatic rollback if anything fails.' }}</p></div>
       <div class="feature-grid">@for (feature of features; track feature.pt; let index = $index) { <div><span>0{{ index + 1 }}</span><p>{{ isPt() ? feature.pt : feature.en }}</p></div> }</div>
     </section>
 
@@ -45,7 +45,7 @@
 
     <section class="quality shell">
       <p class="section-index">05 / {{ isPt() ? 'SEGURANÇA' : 'SAFETY' }}</p>
-      <div class="quality-grid"><article><strong>100% prévia</strong><p>{{ isPt() ? 'a execução usa exatamente os itens revisados' : 'execution uses the exact reviewed items' }}</p></article><article><strong>Windows-safe</strong><p>{{ isPt() ? 'nomes reservados e caracteres inválidos são bloqueados' : 'reserved names and invalid characters are blocked' }}</p></article><article><strong>1 undo</strong><p>{{ isPt() ? 'a última renomeação pode ser revertida' : 'the latest rename operation can be reverted' }}</p></article><article><strong>0 subpastas</strong><p>{{ isPt() ? 'o escopo fica limitado à pasta escolhida' : 'scope stays within the selected folder' }}</p></article></div>
+      <div class="quality-grid"><article><strong>100% prévia</strong><p>{{ isPt() ? 'a execução usa exatamente os itens revisados' : 'execution uses the exact reviewed items' }}</p></article><article><strong>Windows-safe</strong><p>{{ isPt() ? 'nomes reservados e caracteres inválidos são bloqueados' : 'reserved names and invalid characters are blocked' }}</p></article><article><strong>Rollback</strong><p>{{ isPt() ? 'falhas parciais revertem automaticamente o lote' : 'partial failures automatically revert the batch' }}</p></article><article><strong>Lixeira</strong><p>{{ isPt() ? 'a exclusão permanece recuperável pelo Windows' : 'deleted files remain recoverable through Windows' }}</p></article></div>
     </section>
 
     <section class="cta shell"><p>{{ isPt() ? 'Código, testes e documentação' : 'Source, tests and documentation' }}</p><h2>{{ isPt() ? 'Veja como foi' : 'See how it was' }} <em>{{ isPt() ? 'construído.' : 'built.' }}</em></h2><a [href]="repositoryUrl" target="_blank" rel="noreferrer">github.com/AvinSSSS/OrganizadorArquivos <span>↗</span></a></section>
