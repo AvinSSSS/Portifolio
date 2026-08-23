@@ -1,0 +1,54 @@
+<ion-content>
+  <header class="case-header">
+    <a routerLink="/" class="back">← {{ isPt() ? 'Voltar ao portfólio' : 'Back to portfolio' }}</a>
+    <button type="button" (click)="language.toggle()" [attr.aria-label]="isPt() ? 'Mudar para inglês' : 'Switch to Portuguese'">{{ isPt() ? 'EN' : 'PT' }}</button>
+  </header>
+  <main>
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow"><span></span>{{ isPt() ? 'ESTUDO DE CASO · DELPHI VCL' : 'CASE STUDY · DELPHI VCL' }}</p>
+        <h1>{{ isPt() ? 'Organizador' : 'Batch File' }} <em>{{ isPt() ? 'de Arquivos' : 'Organizer' }}</em></h1>
+        <p class="lead">{{ isPt() ? 'Renomeação em lote com prévia, validação e um caminho seguro para voltar atrás.' : 'Batch renaming with preview, validation and a safe way to roll changes back.' }}</p>
+        <div class="actions"><a [href]="repositoryUrl" target="_blank" rel="noreferrer" class="primary">{{ isPt() ? 'Ver repositório no GitHub' : 'View repository on GitHub' }} <span>↗</span></a><a href="#tecnicas">{{ isPt() ? 'Explorar as técnicas' : 'Explore the techniques' }} <span>↓</span></a></div>
+      </div>
+      <div class="hero-meta">
+        <div><span>{{ isPt() ? 'PLATAFORMA' : 'PLATFORM' }}</span><strong>Windows</strong></div>
+        <div><span>STACK</span><strong>Delphi 13 · VCL</strong></div>
+        <div><span>STATUS</span><strong class="done">● {{ isPt() ? 'MVP concluído' : 'MVP complete' }}</strong></div>
+        <div><span>{{ isPt() ? 'ARQUITETURA' : 'ARCHITECTURE' }}</span><strong>MVC adaptado</strong></div>
+      </div>
+    </section>
+
+    <section class="problem shell split">
+      <div><p class="section-index">01 / {{ isPt() ? 'O MOTIVO' : 'WHY' }}</p><h2>{{ isPt() ? 'Organizar arquivos não deveria significar' : 'Organizing files should not mean' }} <em>{{ isPt() ? 'arriscar perdê-los.' : 'risking them.' }}</em></h2></div>
+      <div class="copy"><p>{{ isPt() ? 'Fotos, documentos e exportações acumulam nomes inconsistentes. Corrigir um por um custa tempo; automatizar sem uma prévia pode criar colisões ou tornar centenas de arquivos irreconhecíveis em segundos.' : 'Photos, documents and exports accumulate inconsistent names. Fixing them one by one takes time; automating without a preview can create collisions or make hundreds of files unrecognizable in seconds.' }}</p><p>{{ isPt() ? 'O projeto foi desenhado em torno de uma ideia simples: automação só é útil quando o usuário entende o resultado e consegue recuperar a última operação.' : 'The project is built around a simple idea: automation is only useful when users understand the outcome and can recover the latest operation.' }}</p></div>
+    </section>
+
+    <section class="showcase shell"><figure><img src="assets/projects/organizador-arquivos/painel-principal.png" [alt]="isPt() ? 'Tela principal com regras e prévia de renomeação' : 'Main screen with rules and rename preview'"><figcaption><span>01</span>{{ isPt() ? 'Regras e resultado lado a lado antes de qualquer alteração.' : 'Rules and outcome side by side before any change.' }}</figcaption></figure></section>
+
+    <section class="features shell">
+      <p class="section-index">02 / {{ isPt() ? 'A SOLUÇÃO' : 'THE SOLUTION' }}</p>
+      <div class="section-heading"><h2>{{ isPt() ? 'Velocidade com' : 'Speed with' }}<br><em>{{ isPt() ? 'controle.' : 'control.' }}</em></h2><p>{{ isPt() ? 'O fluxo separa claramente configurar, revisar, executar e desfazer.' : 'The workflow clearly separates configuration, review, execution and undo.' }}</p></div>
+      <div class="feature-grid">@for (feature of features; track feature.pt; let index = $index) { <div><span>0{{ index + 1 }}</span><p>{{ isPt() ? feature.pt : feature.en }}</p></div> }</div>
+    </section>
+
+    <section id="tecnicas" class="techniques shell">
+      <p class="section-index">03 / {{ isPt() ? 'TÉCNICAS APLICADAS' : 'TECHNIQUES' }}</p>
+      <h2>{{ isPt() ? 'Decisões que tornam a automação' : 'Decisions that make automation' }} <em>{{ isPt() ? 'previsível.' : 'predictable.' }}</em></h2>
+      <div class="tech-list">@for (technique of techniques; track technique.number) { <article><span class="number">{{ technique.number }}</span><div><h3>{{ isPt() ? technique.ptTitle : technique.enTitle }}</h3><p>{{ isPt() ? technique.ptText : technique.enText }}</p><code>{{ technique.code }}</code></div></article> }</div>
+    </section>
+
+    <section class="xml shell split">
+      <div><p class="section-index">04 / {{ isPt() ? 'ARQUITETURA' : 'ARCHITECTURE' }}</p><h2>{{ isPt() ? 'Cada camada com uma' : 'A clear job for' }} <em>{{ isPt() ? 'responsabilidade.' : 'each layer.' }}</em></h2><p>{{ isPt() ? 'O controller concentra regras puras de nomes e arquivos; o DataModule valida a solicitação e adapta os dados; os formulários cuidam somente da interação. Essa divisão permitiu testar o ciclo crítico sem depender da interface.' : 'The controller owns pure filename and filesystem rules; the DataModule validates requests and adapts data; forms handle interaction only. This separation makes the critical flow testable without the UI.' }}</p></div>
+      <div class="hero-meta"><div><span>CONTROLLER</span><strong>Preview · Execute · Undo</strong></div><div><span>MODEL</span><strong>DataModule · validação</strong></div><div><span>VIEW</span><strong>VCL Forms · Grid</strong></div><div><span>TESTS</span><strong>DUnitX</strong></div></div>
+    </section>
+
+    <section class="quality shell">
+      <p class="section-index">05 / {{ isPt() ? 'SEGURANÇA' : 'SAFETY' }}</p>
+      <div class="quality-grid"><article><strong>100% prévia</strong><p>{{ isPt() ? 'a execução usa exatamente os itens revisados' : 'execution uses the exact reviewed items' }}</p></article><article><strong>Windows-safe</strong><p>{{ isPt() ? 'nomes reservados e caracteres inválidos são bloqueados' : 'reserved names and invalid characters are blocked' }}</p></article><article><strong>1 undo</strong><p>{{ isPt() ? 'a última renomeação pode ser revertida' : 'the latest rename operation can be reverted' }}</p></article><article><strong>0 subpastas</strong><p>{{ isPt() ? 'o escopo fica limitado à pasta escolhida' : 'scope stays within the selected folder' }}</p></article></div>
+    </section>
+
+    <section class="cta shell"><p>{{ isPt() ? 'Código, testes e documentação' : 'Source, tests and documentation' }}</p><h2>{{ isPt() ? 'Veja como foi' : 'See how it was' }} <em>{{ isPt() ? 'construído.' : 'built.' }}</em></h2><a [href]="repositoryUrl" target="_blank" rel="noreferrer">github.com/AvinSSSS/OrganizadorArquivos <span>↗</span></a></section>
+  </main>
+  <footer><a routerLink="/">← {{ isPt() ? 'Portfólio' : 'Portfolio' }}</a><span>Andreus Vinicius · Delphi VCL</span></footer>
+</ion-content>

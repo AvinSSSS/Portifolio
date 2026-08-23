@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadComponent: () => import('./case-studies/nfe-case-study.page').then((m) => m.NfeCaseStudyPage),
   },
   {
+    path: 'projetos/organizador-arquivos',
+    loadComponent: () => import('./case-studies/file-organizer-case-study.page').then((m) => m.FileOrganizerCaseStudyPage),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

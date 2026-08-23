@@ -43,7 +43,9 @@ export const PROJECTS: PortfolioProject[] = [
     title: { pt: 'Organizador de Arquivos', en: 'Batch File Organizer' },
     problem: { pt: 'Renomear fotos e documentos manualmente consome tempo e cria inconsistências.', en: 'Renaming photos and documents manually wastes time and creates inconsistencies.' },
     solution: { pt: 'Renomeação em lote com ordem previsível, prévia, validação de nomes e desfazer seguro.', en: 'Batch renaming with predictable ordering, preview, filename validation and safe undo.' },
-    stack: ['Delphi', 'VCL', 'DUnitX'], status: 'available', repositoryUrl: 'https://github.com/AvinSSSS/OrganizadorArquivos',
+    stack: ['Delphi', 'VCL', 'DUnitX'], status: 'available',
+    repositoryUrl: 'https://github.com/AvinSSSS/OrganizadorArquivos',
+    caseStudyPath: '/projetos/organizador-arquivos',
   },
   {
     slug: 'discord-bot', number: '04',
