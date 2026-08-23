@@ -1,0 +1,81 @@
+<ion-content>
+  <header class="case-header">
+    <a routerLink="/" class="back">← {{ isPt() ? 'Voltar ao portfólio' : 'Back to portfolio' }}</a>
+    <button type="button" (click)="language.toggle()" [attr.aria-label]="isPt() ? 'Mudar para inglês' : 'Switch to Portuguese'">{{ isPt() ? 'EN' : 'PT' }}</button>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow"><span></span>{{ isPt() ? 'ESTUDO DE CASO · DELPHI VCL' : 'CASE STUDY · DELPHI VCL' }}</p>
+        <h1>{{ isPt() ? 'Descomplicador' : 'NFe' }} <em>{{ isPt() ? 'de NFe' : 'Explorer' }}</em></h1>
+        <p class="lead">{{ isPt() ? 'De uma pasta cheia de XMLs a uma visão pesquisável, segura e pronta para exportar.' : 'From a folder full of XML files to a searchable, safe and export-ready view.' }}</p>
+        <div class="actions">
+          <a [href]="repositoryUrl" target="_blank" rel="noreferrer" class="primary">{{ isPt() ? 'Ver repositório no GitHub' : 'View repository on GitHub' }} <span>↗</span></a>
+          <a href="#tecnicas">{{ isPt() ? 'Explorar as técnicas' : 'Explore the techniques' }} <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div><span>{{ isPt() ? 'PLATAFORMA' : 'PLATFORM' }}</span><strong>Windows</strong></div>
+        <div><span>STACK</span><strong>Delphi 13 · VCL</strong></div>
+        <div><span>STATUS</span><strong class="done">● {{ isPt() ? 'MVP concluído' : 'MVP complete' }}</strong></div>
+        <div><span>{{ isPt() ? 'PRIVACIDADE' : 'PRIVACY' }}</span><strong>100% local</strong></div>
+      </div>
+    </section>
+
+    <section class="problem shell split">
+      <div><p class="section-index">01 / {{ isPt() ? 'O MOTIVO' : 'WHY' }}</p><h2>{{ isPt() ? 'XML fiscal não deveria exigir' : 'Fiscal XML should not require' }} <em>{{ isPt() ? 'trabalho manual.' : 'manual work.' }}</em></h2></div>
+      <div class="copy">
+        <p>{{ isPt() ? 'Pequenos empreendedores e equipes administrativas recebem pastas com dezenas ou centenas de XMLs. Encontrar um fornecedor, conferir um total ou montar uma planilha significa abrir documentos individualmente e interpretar uma estrutura feita para sistemas, não para pessoas.' : 'Small businesses and administrative teams receive folders with dozens or hundreds of XML files. Finding a supplier, checking a total or building a spreadsheet means opening documents one by one and reading a structure designed for systems, not people.' }}</p>
+        <p>{{ isPt() ? 'O projeto nasceu para eliminar essa fricção sem criar outra: funciona nativamente no Windows, processa tudo no computador e preserva os arquivos originais.' : 'The project removes that friction without introducing another one: it runs natively on Windows, processes everything locally and preserves the original files.' }}</p>
+      </div>
+    </section>
+
+    <section class="showcase shell">
+      <figure>
+        <img src="assets/projects/descomplicador-nfe/painel-principal.png" [alt]="isPt() ? 'Tela principal com pesquisa, documentos e totais' : 'Main screen with search, documents and totals'">
+        <figcaption><span>01</span>{{ isPt() ? 'Visão consolidada do lote, pesquisa e ações por documento.' : 'Consolidated batch view, search and per-document actions.' }}</figcaption>
+      </figure>
+    </section>
+
+    <section class="features shell">
+      <p class="section-index">02 / {{ isPt() ? 'A SOLUÇÃO' : 'THE SOLUTION' }}</p>
+      <div class="section-heading"><h2>{{ isPt() ? 'Menos cliques.' : 'Fewer clicks.' }}<br><em>{{ isPt() ? 'Mais controle.' : 'More control.' }}</em></h2><p>{{ isPt() ? 'O MVP cobre o fluxo completo: localizar, carregar, pesquisar, revisar e exportar.' : 'The MVP covers the complete flow: locate, load, search, review and export.' }}</p></div>
+      <div class="feature-grid">
+        @for (feature of features; track feature.pt; let index = $index) { <div><span>0{{ index + 1 }}</span><p>{{ isPt() ? feature.pt : feature.en }}</p></div> }
+      </div>
+    </section>
+
+    <section id="tecnicas" class="techniques shell">
+      <p class="section-index">03 / {{ isPt() ? 'TÉCNICAS APLICADAS' : 'TECHNIQUES' }}</p>
+      <h2>{{ isPt() ? 'Decisões de engenharia que' : 'Engineering decisions that' }} <em>{{ isPt() ? 'protegem o fluxo.' : 'protect the workflow.' }}</em></h2>
+      <div class="tech-list">
+        @for (technique of techniques; track technique.number) {
+          <article><span class="number">{{ technique.number }}</span><div><h3>{{ isPt() ? technique.ptTitle : technique.enTitle }}</h3><p>{{ isPt() ? technique.ptText : technique.enText }}</p><code>{{ technique.code }}</code></div></article>
+        }
+      </div>
+    </section>
+
+    <section class="xml shell split">
+      <div><p class="section-index">04 / {{ isPt() ? 'TRANSPARÊNCIA' : 'TRANSPARENCY' }}</p><h2>{{ isPt() ? 'O dado continua' : 'The data stays' }} <em>{{ isPt() ? 'visível.' : 'visible.' }}</em></h2><p>{{ isPt() ? 'Quando necessário, o XML completo pode ser inspecionado e copiado dentro do aplicativo. Nenhum visualizador externo ou upload é necessário.' : 'When needed, the complete XML can be inspected and copied inside the app. No external viewer or upload is required.' }}</p></div>
+      <figure><img src="assets/projects/descomplicador-nfe/visualizador-xml.png" [alt]="isPt() ? 'Visualizador interno do conteúdo XML' : 'Built-in XML content viewer'"><figcaption>{{ isPt() ? 'Visualização formatada e somente leitura.' : 'Formatted, read-only view.' }}</figcaption></figure>
+    </section>
+
+    <section class="quality shell">
+      <p class="section-index">05 / {{ isPt() ? 'QUALIDADE E SEGURANÇA' : 'QUALITY & SECURITY' }}</p>
+      <div class="quality-grid">
+        <article><strong>10 MB</strong><p>{{ isPt() ? 'limite por XML para controlar consumo de memória' : 'per-file limit to control memory usage' }}</p></article>
+        <article><strong>DTD ✕</strong><p>{{ isPt() ? 'bloqueio de documentos com DTD e entidades externas' : 'documents with DTDs and external entities are rejected' }}</p></article>
+        <article><strong>DUnitX</strong><p>{{ isPt() ? 'testes de namespaces, erros, edição e CSV' : 'tests for namespaces, errors, editing and CSV' }}</p></article>
+        <article><strong>0 uploads</strong><p>{{ isPt() ? 'sem rede, telemetria ou armazenamento externo' : 'no network, telemetry or external storage' }}</p></article>
+      </div>
+    </section>
+
+    <section class="cta shell">
+      <p>{{ isPt() ? 'Código, testes e documentação' : 'Source, tests and documentation' }}</p>
+      <h2>{{ isPt() ? 'Veja como foi' : 'See how it was' }} <em>{{ isPt() ? 'construído.' : 'built.' }}</em></h2>
+      <a [href]="repositoryUrl" target="_blank" rel="noreferrer">github.com/AvinSSSS/DescomplicadorNFe <span>↗</span></a>
+    </section>
+  </main>
+  <footer><a routerLink="/">← {{ isPt() ? 'Portfólio' : 'Portfolio' }}</a><span>Andreus Vinicius · Delphi VCL</span></footer>
+</ion-content>

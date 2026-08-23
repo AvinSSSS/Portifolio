@@ -59,7 +59,8 @@
             <p class="problem"><strong>{{ isPt() ? 'O problema:' : 'The problem:' }}</strong> {{ local(project.problem) }}</p>
             <p>{{ local(project.solution) }}</p>
             <div class="stack">@for (technology of project.stack; track technology) { <span>{{ technology }}</span> }</div>
-            @if (project.demoUrl) { <a class="project-link" [href]="project.demoUrl" target="_blank" rel="noreferrer">{{ isPt() ? 'Abrir projeto' : 'Open project' }} <span>↗</span></a> }
+            @if (project.caseStudyPath) { <a class="project-link" [routerLink]="project.caseStudyPath">{{ isPt() ? 'Ver estudo de caso' : 'View case study' }} <span>→</span></a> }
+            @else if (project.demoUrl) { <a class="project-link" [href]="project.demoUrl" target="_blank" rel="noreferrer">{{ isPt() ? 'Abrir projeto' : 'Open project' }} <span>↗</span></a> }
             @else if (project.repositoryUrl) { <a class="project-link" [href]="project.repositoryUrl" target="_blank" rel="noreferrer">{{ isPt() ? 'Ver código do MVP' : 'View MVP source' }} <span>↗</span></a> }
           </article>
         }

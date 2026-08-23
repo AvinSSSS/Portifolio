@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
+    path: 'projetos/descomplicador-nfe',
+    loadComponent: () => import('./case-studies/nfe-case-study.page').then((m) => m.NfeCaseStudyPage),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

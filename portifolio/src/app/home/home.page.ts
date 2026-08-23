@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { IonContent } from '@ionic/angular/standalone';
 import { LanguageService } from '../core/language.service';
 import { LocalizedText, PROJECTS } from '../core/project.model';
 
-@Component({ standalone: true, selector: 'app-home', templateUrl: 'home.page.html', styleUrls: ['home.page.scss'], imports: [IonContent] })
+@Component({ standalone: true, selector: 'app-home', templateUrl: 'home.page.html', styleUrls: ['home.page.scss'], imports: [IonContent, RouterLink] })
 export class HomePage {
   readonly projects = PROJECTS;
   readonly currentYear = new Date().getFullYear();

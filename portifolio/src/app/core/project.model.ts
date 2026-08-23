@@ -15,6 +15,7 @@ export interface PortfolioProject {
   status: ProjectStatus;
   repositoryUrl?: string;
   demoUrl?: string;
+  caseStudyPath?: string;
   downloadUrl?: string;
   imageUrl?: string;
 }
@@ -33,7 +34,9 @@ export const PROJECTS: PortfolioProject[] = [
     title: { pt: 'Descomplicador de NFe', en: 'NFe Explorer' },
     problem: { pt: 'Pastas com centenas de XMLs tornam uma consulta simples demorada e sujeita a erro.', en: 'Folders with hundreds of XML files make simple checks slow and error-prone.' },
     solution: { pt: 'Aplicativo Windows local para pesquisar, ordenar, revisar e exportar lotes de NF-e com totalizadores e visualização do XML.', en: 'A local Windows app for searching, sorting, reviewing and exporting NFe batches with totals and formatted XML viewing.' },
-    stack: ['Delphi', 'VCL', 'XML', 'DUnitX'], status: 'building', repositoryUrl: 'https://github.com/AvinSSSS/DescomplicadorNFe',
+    stack: ['Delphi', 'VCL', 'XML', 'DUnitX'], status: 'available',
+    repositoryUrl: 'https://github.com/AvinSSSS/DescomplicadorNFe',
+    caseStudyPath: '/projetos/descomplicador-nfe',
   },
   {
     slug: 'organizador-arquivos', number: '03',
