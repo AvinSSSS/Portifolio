@@ -1,0 +1,33 @@
+<ion-content>
+  <header class="case-header">
+    <a routerLink="/" class="back">← {{ isPt() ? 'Voltar ao portfólio' : 'Back to portfolio' }}</a>
+    <button type="button" (click)="language.toggle()" [attr.aria-label]="isPt() ? 'Mudar para inglês' : 'Switch to Portuguese'">{{ isPt() ? 'EN' : 'PT' }}</button>
+  </header>
+  <main>
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow"><span></span>{{ isPt() ? 'SOLUÇÃO · NODE.JS' : 'SOLUTION · NODE.JS' }}</p>
+        <h1>{{ isPt() ? 'Bot Utilitário' : 'Utility Bot' }} <em>{{ isPt() ? 'para Discord' : 'for Discord' }}</em></h1>
+        <p class="lead">{{ isPt() ? 'Recepção, suporte e participação da comunidade automatizados com segurança e uma experiência direta.' : 'Community onboarding, support and participation automated with security and a direct user experience.' }}</p>
+        <div class="actions"><a [href]="repositoryUrl" target="_blank" rel="noreferrer" class="primary">{{ isPt() ? 'Ver repositório no GitHub' : 'View repository on GitHub' }} <span>↗</span></a><a href="#tecnicas">{{ isPt() ? 'Explorar as técnicas' : 'Explore the techniques' }} <span>↓</span></a></div>
+      </div>
+      <div class="hero-meta"><div><span>{{ isPt() ? 'PLATAFORMA' : 'PLATFORM' }}</span><strong>Discord</strong></div><div><span>STACK</span><strong>Node.js 22 · discord.js 14</strong></div><div><span>STATUS</span><strong class="done">● {{ isPt() ? 'MVP concluído' : 'MVP complete' }}</strong></div><div><span>{{ isPt() ? 'ENTREGA' : 'DELIVERY' }}</span><strong>Docker · CI</strong></div></div>
+    </section>
+
+    <section class="problem shell split">
+      <div><p class="section-index">01 / {{ isPt() ? 'O QUE É O DISCORD' : 'WHAT DISCORD IS' }}</p><h2>{{ isPt() ? 'Comunidades reunidas em' : 'Communities brought together in' }} <em>{{ isPt() ? 'um espaço vivo.' : 'a living space.' }}</em></h2></div>
+      <div class="copy"><p>{{ isPt() ? 'O Discord é uma plataforma de comunidades organizada em servidores, canais de texto e voz. Bots são aplicações que participam desses espaços para responder a comandos, eventos e rotinas repetitivas.' : 'Discord is a community platform organized into servers plus text and voice channels. Bots are applications that take part in these spaces to respond to commands, events and repetitive routines.' }}</p><p>{{ isPt() ? 'Ele é interessante no portfólio porque transforma uma interface aparentemente simples em integração real: eventos assíncronos, regras de acesso, estados concorrentes, tratamento de falhas e operação contínua.' : 'It belongs in a portfolio because it turns a seemingly simple interface into a real integration: asynchronous events, access rules, concurrent state, failure handling and continuous operation.' }}</p></div>
+    </section>
+
+    <section class="features shell"><p class="section-index">02 / {{ isPt() ? 'A SOLUÇÃO' : 'THE SOLUTION' }}</p><div class="section-heading"><h2>{{ isPt() ? 'Comandos simples.' : 'Simple commands.' }}<br><em>{{ isPt() ? 'Engenharia consciente.' : 'Thoughtful engineering.' }}</em></h2><p>{{ isPt() ? 'Para o membro, basta usar /ticket, /fechar ou /sugerir. Por trás disso, o bot protege canais, preserva históricos e sabe se recuperar de falhas.' : 'Members only need /ticket, /fechar or /sugerir. Behind them, the bot protects channels, preserves history and recovers from failures.' }}</p></div><div class="feature-grid">@for (feature of features; track feature.pt; let index = $index) { <div><span>0{{ index + 1 }}</span><p>{{ isPt() ? feature.pt : feature.en }}</p></div> }</div></section>
+
+    <section id="tecnicas" class="techniques shell"><p class="section-index">03 / {{ isPt() ? 'TÉCNICAS APLICADAS' : 'TECHNIQUES' }}</p><h2>{{ isPt() ? 'Simplicidade visível,' : 'Visible simplicity,' }} <em>{{ isPt() ? 'decisões reais por baixo.' : 'real decisions underneath.' }}</em></h2><div class="tech-list">@for (technique of techniques; track technique.number) { <article><span class="number">{{ technique.number }}</span><div><h3>{{ isPt() ? technique.ptTitle : technique.enTitle }}</h3><p>{{ isPt() ? technique.ptText : technique.enText }}</p><code>{{ technique.code }}</code></div></article> }</div></section>
+
+    <section class="xml shell split"><div><p class="section-index">04 / {{ isPt() ? 'FLUXO DO TICKET' : 'TICKET FLOW' }}</p><h2>{{ isPt() ? 'O histórico vem' : 'History comes' }} <em>{{ isPt() ? 'antes da exclusão.' : 'before deletion.' }}</em></h2><p>{{ isPt() ? 'O comando cria um canal privado, registra o autor no tópico e impede duplicidade. No fechamento, busca e ordena as mensagens, preserva anexos como links e salva o transcript em canal privado ou por mensagem direta. O ticket só é removido depois dessa confirmação.' : 'The command creates a private channel, records its owner in the topic and prevents duplicates. On closing, it fetches and sorts messages, preserves attachments as links and saves the transcript to a private channel or direct message. The ticket is deleted only after confirmation.' }}</p></div><div class="hero-meta"><div><span>01 · COMMAND</span><strong>/ticket</strong></div><div><span>02 · ACCESS</span><strong>{{ isPt() ? 'Autor + suporte' : 'Author + support' }}</strong></div><div><span>03 · ARCHIVE</span><strong>Transcript UTF-8</strong></div><div><span>04 · CLOSE</span><strong>/fechar</strong></div></div></section>
+
+    <section class="quality shell"><p class="section-index">05 / {{ isPt() ? 'QUALIDADE' : 'QUALITY' }}</p><div class="quality-grid"><article><strong>3 comandos</strong><p>/ticket · /fechar · /sugerir</p></article><article><strong>100 mensagens</strong><p>{{ isPt() ? 'limite intencional por transcript' : 'intentional limit per transcript' }}</p></article><article><strong>3 endpoints</strong><p>/ · /health · /ready</p></article><article><strong>0 tokens</strong><p>{{ isPt() ? 'segredos nunca versionados' : 'secrets committed to source' }}</p></article></div></section>
+
+    <section class="cta shell"><p>{{ isPt() ? 'Código, testes e documentação' : 'Source, tests and documentation' }}</p><h2>{{ isPt() ? 'Veja como foi' : 'See how it was' }} <em>{{ isPt() ? 'construído.' : 'built.' }}</em></h2><a [href]="repositoryUrl" target="_blank" rel="noreferrer">github.com/AvinSSSS/DiscordUtilityBot <span>↗</span></a></section>
+  </main>
+  <footer><a routerLink="/">← {{ isPt() ? 'Portfólio' : 'Portfolio' }}</a><span>Andreus Vinicius · Node.js · discord.js</span></footer>
+</ion-content>

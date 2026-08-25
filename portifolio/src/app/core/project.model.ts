@@ -53,6 +53,7 @@ export const PROJECTS: PortfolioProject[] = [
     problem: { pt: 'Comunidades pequenas precisam organizar recepção e suporte sem painéis complexos.', en: 'Small communities need to organize onboarding and support without complex dashboards.' },
     solution: { pt: 'Boas-vindas configuráveis e tickets privados com autorização, transcript preservado e monitoramento.', en: 'Configurable welcomes and private tickets with authorization, preserved transcripts and monitoring.' },
     stack: ['Node.js', 'discord.js', 'Docker'], status: 'available', repositoryUrl: 'https://github.com/AvinSSSS/DiscordUtilityBot',
+    caseStudyPath: '/projetos/bot-discord',
   },
   {
     slug: 'assistente-laudos', number: '05',

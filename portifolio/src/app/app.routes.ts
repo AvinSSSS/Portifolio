@@ -14,6 +14,10 @@ export const routes: Routes = [
     loadComponent: () => import('./case-studies/file-organizer-case-study.page').then((m) => m.FileOrganizerCaseStudyPage),
   },
   {
+    path: 'projetos/bot-discord',
+    loadComponent: () => import('./case-studies/discord-bot-case-study.page').then((m) => m.DiscordBotCaseStudyPage),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
