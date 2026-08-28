@@ -54,7 +54,7 @@
       <div class="project-grid">
         @for (project of projects; track project.slug) {
           <article class="project-card" [class.featured]="project.status === 'available'">
-            <div class="project-top"><span class="project-number">{{ project.number }}</span><span class="status" [class.online]="project.status === 'available'">{{ project.status === 'available' ? (isPt() ? 'Disponível' : 'Available') : (isPt() ? 'Em construção' : 'Building') }}</span></div>
+            <div class="project-top"><span class="project-number">{{ project.number }}</span><span class="status" [class.online]="project.status === 'available'">{{ project.status === 'available' ? (isPt() ? 'Disponível' : 'Available') : project.status === 'planned' ? (isPt() ? 'Planejado' : 'Planned') : (isPt() ? 'Em construção' : 'Building') }}</span></div>
             <h3>{{ local(project.title) }}</h3>
             <p class="problem"><strong>{{ isPt() ? 'O problema:' : 'The problem:' }}</strong> {{ local(project.problem) }}</p>
             <p>{{ local(project.solution) }}</p>

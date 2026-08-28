@@ -22,6 +22,10 @@ export const routes: Routes = [
     loadComponent: () => import('./case-studies/quote-report-case-study.page').then((m) => m.QuoteReportCaseStudyPage),
   },
   {
+    path: 'projetos/controle-recebimentos',
+    loadComponent: () => import('./case-studies/delivery-receiving-case-study.page').then((m) => m.DeliveryReceivingCaseStudyPage),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

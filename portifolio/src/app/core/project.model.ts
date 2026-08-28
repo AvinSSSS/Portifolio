@@ -1,4 +1,4 @@
-export type ProjectStatus = 'available' | 'building';
+export type ProjectStatus = 'available' | 'building' | 'planned';
 
 export interface LocalizedText {
   pt: string;
@@ -22,7 +22,24 @@ export interface PortfolioProject {
 
 export const PROJECTS: PortfolioProject[] = [
   {
-    slug: 'hub-calculadoras', number: '01',
+    slug: 'assistente-laudos', number: '01',
+    title: { pt: 'Orçamento & Laudo', en: 'Quote & Report' },
+    problem: { pt: 'Profissionais técnicos perdem tempo organizando clientes, preços, orçamentos e laudos em ferramentas separadas.', en: 'Technical professionals lose time managing clients, prices, quotes and reports across separate tools.' },
+    solution: { pt: 'Aplicativo Android offline-first para organizar o atendimento e gerar documentos profissionais no próprio aparelho.', en: 'An offline-first Android app for organizing service work and creating professional documents directly on the device.' },
+    stack: ['Ionic', 'Angular', 'Capacitor', 'SQLite'], status: 'building',
+    caseStudyPath: '/projetos/orcamento-laudo',
+  },
+  {
+    slug: 'controle-recebimentos', number: '02',
+    title: { pt: 'Controle de Recebimento de Entregadores', en: 'Delivery Receiving Control' },
+    problem: { pt: 'Previsões, atrasos e recebimentos parciais ficam dispersos em anotações e planilhas difíceis de acompanhar.', en: 'Expected deliveries, delays and partial receipts become scattered across notes and hard-to-track spreadsheets.' },
+    solution: { pt: 'Planejamento de uma agenda visual para controlar transportadoras, recebimentos, saldos e histórico.', en: 'A planned visual schedule for managing carriers, receipts, outstanding balances and history.' },
+    stack: ['Web responsiva', 'Firebase', 'Excel'], status: 'planned',
+    repositoryUrl: 'https://github.com/AvinSSSS/controle-recebimento-entregadores',
+    caseStudyPath: '/projetos/controle-recebimentos',
+  },
+  {
+    slug: 'hub-calculadoras', number: '03',
     title: { pt: 'Hub de Calculadoras', en: 'Useful Calculators Hub' },
     problem: { pt: 'Ferramentas simples costumam estar escondidas em sites lentos e cheios de anúncios.', en: 'Simple tools are often buried in slow, ad-heavy websites.' },
     solution: { pt: 'Três calculadoras diretas para valor-hora, juros compostos e custo de deslocamento.', en: 'Three direct calculators for hourly rates, compound interest and commuting costs.' },
@@ -30,7 +47,7 @@ export const PROJECTS: PortfolioProject[] = [
     repositoryUrl: 'https://github.com/AvinSSSS/HubCalculadoras', demoUrl: 'https://avinssss.github.io/HubCalculadoras/',
   },
   {
-    slug: 'nfe', number: '02',
+    slug: 'nfe', number: '04',
     title: { pt: 'Descomplicador de NFe', en: 'NFe Explorer' },
     problem: { pt: 'Pastas com centenas de XMLs tornam uma consulta simples demorada e sujeita a erro.', en: 'Folders with hundreds of XML files make simple checks slow and error-prone.' },
     solution: { pt: 'Aplicativo Windows local para pesquisar, ordenar, revisar e exportar lotes de NF-e com totalizadores e visualização do XML.', en: 'A local Windows app for searching, sorting, reviewing and exporting NFe batches with totals and formatted XML viewing.' },
@@ -39,7 +56,7 @@ export const PROJECTS: PortfolioProject[] = [
     caseStudyPath: '/projetos/descomplicador-nfe',
   },
   {
-    slug: 'organizador-arquivos', number: '03',
+    slug: 'organizador-arquivos', number: '05',
     title: { pt: 'Organizador de Arquivos', en: 'Batch File Organizer' },
     problem: { pt: 'Renomear fotos e documentos manualmente consome tempo e cria inconsistências.', en: 'Renaming photos and documents manually wastes time and creates inconsistencies.' },
     solution: { pt: 'Renomeação em lote com ordem previsível, prévia, validação de nomes e desfazer seguro.', en: 'Batch renaming with predictable ordering, preview, filename validation and safe undo.' },
@@ -48,19 +65,11 @@ export const PROJECTS: PortfolioProject[] = [
     caseStudyPath: '/projetos/organizador-arquivos',
   },
   {
-    slug: 'discord-bot', number: '04',
+    slug: 'discord-bot', number: '06',
     title: { pt: 'Bot Utilitário para Discord', en: 'Discord Utility Bot' },
     problem: { pt: 'Comunidades pequenas precisam organizar recepção e suporte sem painéis complexos.', en: 'Small communities need to organize onboarding and support without complex dashboards.' },
     solution: { pt: 'Boas-vindas configuráveis e tickets privados com autorização, transcript preservado e monitoramento.', en: 'Configurable welcomes and private tickets with authorization, preserved transcripts and monitoring.' },
     stack: ['Node.js', 'discord.js', 'Docker'], status: 'available', repositoryUrl: 'https://github.com/AvinSSSS/DiscordUtilityBot',
     caseStudyPath: '/projetos/bot-discord',
-  },
-  {
-    slug: 'assistente-laudos', number: '05',
-    title: { pt: 'Orçamento & Laudo', en: 'Quote & Report' },
-    problem: { pt: 'Profissionais técnicos perdem tempo organizando clientes, preços, orçamentos e laudos em ferramentas separadas.', en: 'Technical professionals lose time managing clients, prices, quotes and reports across separate tools.' },
-    solution: { pt: 'Aplicativo Android offline-first para organizar o atendimento e gerar documentos profissionais no próprio aparelho.', en: 'An offline-first Android app for organizing service work and creating professional documents directly on the device.' },
-    stack: ['Ionic', 'Angular', 'Capacitor', 'SQLite'], status: 'building',
-    caseStudyPath: '/projetos/orcamento-laudo',
   },
 ];

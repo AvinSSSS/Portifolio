@@ -1,0 +1,43 @@
+<ion-content>
+  <header class="case-header">
+    <a routerLink="/" class="back">← {{ isPt() ? 'Voltar ao portfólio' : 'Back to portfolio' }}</a>
+    <button type="button" (click)="language.toggle()" [attr.aria-label]="isPt() ? 'Mudar para inglês' : 'Switch to Portuguese'">{{ isPt() ? 'EN' : 'PT' }}</button>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow"><span></span>{{ isPt() ? 'CONCEITO · EM PLANEJAMENTO' : 'CONCEPT · IN PLANNING' }}</p>
+        <h1>{{ isPt() ? 'Controle de' : 'Delivery' }} <em>{{ isPt() ? 'Recebimentos' : 'Receiving Control' }}</em></h1>
+        <p class="lead">{{ isPt() ? 'Uma agenda operacional para transformar previsões, atrasos e recebimentos parciais em informação clara, rastreável e pronta para consulta.' : 'An operational schedule that turns expected, delayed and partial receipts into clear, traceable and searchable information.' }}</p>
+        <div class="actions"><a href="#planejamento" class="primary">{{ isPt() ? 'Conhecer o planejamento' : 'Explore the plan' }} <span>↓</span></a><a [href]="repositoryUrl" target="_blank" rel="noreferrer">{{ isPt() ? 'Ver documentação' : 'View documentation' }} <span>↗</span></a></div>
+        <p class="planning-note"><span></span>{{ isPt() ? 'Projeto em definição. As funcionalidades podem evoluir durante a validação.' : 'Project being defined. Features may evolve during validation.' }}</p>
+      </div>
+      <div class="hero-meta"><div><span>STATUS</span><strong class="planned">○ {{ isPt() ? 'Planejamento inicial' : 'Initial planning' }}</strong></div><div><span>{{ isPt() ? 'EXPERIÊNCIA' : 'EXPERIENCE' }}</span><strong>Web · Desktop · Mobile</strong></div><div><span>{{ isPt() ? 'DADOS' : 'DATA' }}</span><strong>Firebase · Cache local</strong></div><div><span>{{ isPt() ? 'RELATÓRIO' : 'REPORT' }}</span><strong>Excel .xlsx</strong></div></div>
+    </section>
+
+    <section class="problem shell split">
+      <div><p class="section-index">01 / {{ isPt() ? 'O PROBLEMA' : 'THE PROBLEM' }}</p><h2>{{ isPt() ? 'Receber não é apenas' : 'Receiving is more than' }} <em>{{ isPt() ? 'marcar como entregue.' : 'marking delivered.' }}</em></h2></div>
+      <div class="copy"><p>{{ isPt() ? 'Cada transportadora pode ter dias, horários, prazos e bloqueios diferentes. Quando previsões ficam espalhadas em mensagens, anotações e planilhas, identificar atrasos e saldos pendentes exige conferência manual.' : 'Each carrier may have different days, schedules, deadlines and restrictions. When expected receipts are scattered across messages, notes and spreadsheets, finding delays and outstanding balances requires manual checking.' }}</p><p>{{ isPt() ? 'A proposta é criar uma visão única da operação: o que deveria chegar, o que foi recebido, o que ficou pendente e por quê.' : 'The proposal is to create a single view of the operation: what should arrive, what was received, what remains outstanding and why.' }}</p></div>
+    </section>
+
+    <section class="concept shell" aria-labelledby="concept-title">
+      <div class="concept-heading"><div><p class="section-index">02 / {{ isPt() ? 'VISÃO CONCEITUAL' : 'CONCEPT VIEW' }}</p><h2 id="concept-title">{{ isPt() ? 'O mês inteiro.' : 'The whole month.' }} <em>{{ isPt() ? 'Sem perder os detalhes.' : 'Without losing detail.' }}</em></h2></div><p>{{ isPt() ? 'Representação inicial do calendário planejado; não é uma tela final.' : 'Early representation of the planned calendar; not a final interface.' }}</p></div>
+      <div class="calendar-card">
+        <div class="calendar-top"><div><span>{{ isPt() ? 'RECEBIMENTOS' : 'RECEIPTS' }}</span><strong>{{ isPt() ? 'Agosto de 2026' : 'August 2026' }}</strong></div><div class="legend"><span class="received">{{ isPt() ? 'Recebido' : 'Received' }}</span><span class="pending">{{ isPt() ? 'Pendente' : 'Pending' }}</span><span class="late">{{ isPt() ? 'Atrasado' : 'Delayed' }}</span></div></div>
+        <div class="weekdays">@for (day of (isPt() ? ['SEG','TER','QUA','QUI','SEX'] : ['MON','TUE','WED','THU','FRI']); track day) { <span>{{ day }}</span> }</div>
+        <div class="calendar-grid"><div><b>03</b><i class="received"></i><small>Alfa · 24</small></div><div><b>04</b></div><div><b>05</b><i class="pending"></i><small>Rota Sul · 18</small></div><div><b>06</b><i class="received"></i><small>Norte Log · 30</small></div><div><b>07</b></div><div><b>10</b><i class="late"></i><small>Expresso · 12</small></div><div><b>11</b><i class="pending"></i><small>Alfa · 20</small></div><div><b>12</b></div><div><b>13</b><i class="partial"></i><small>{{ isPt() ? 'Parcial · saldo 8' : 'Partial · balance 8' }}</small></div><div><b>14</b><i class="pending"></i><small>Norte Log · 15</small></div></div>
+      </div>
+    </section>
+
+    <section class="features shell"><p class="section-index">03 / {{ isPt() ? 'ESCOPO PLANEJADO' : 'PLANNED SCOPE' }}</p><div class="section-heading"><h2>{{ isPt() ? 'Controle do previsto ao' : 'Control from expected to' }}<br><em>{{ isPt() ? 'realmente recebido.' : 'actually received.' }}</em></h2><p>{{ isPt() ? 'O escopo inicial prioriza o fluxo operacional e a preservação do histórico.' : 'The initial scope prioritizes operational flow and preserving history.' }}</p></div><div class="feature-grid">@for (feature of features; track feature.pt; let index = $index) { <div><span>0{{ index + 1 }}</span><p>{{ isPt() ? feature.pt : feature.en }}</p></div> }</div></section>
+
+    <section class="techniques shell"><p class="section-index">04 / {{ isPt() ? 'DECISÕES DE PLANEJAMENTO' : 'PLANNING DECISIONS' }}</p><h2>{{ isPt() ? 'A operação primeiro.' : 'Operations first.' }} <em>{{ isPt() ? 'A tecnologia a serviço dela.' : 'Technology in its service.' }}</em></h2><div class="tech-list">@for (capability of capabilities; track capability.number) { <article><span class="number">{{ capability.number }}</span><div><h3>{{ isPt() ? capability.ptTitle : capability.enTitle }}</h3><p>{{ isPt() ? capability.ptText : capability.enText }}</p><code>{{ capability.code }}</code></div></article> }</div></section>
+
+    <section id="planejamento" class="roadmap shell"><p class="section-index">05 / ROADMAP</p><div class="section-heading"><h2>{{ isPt() ? 'Do entendimento à' : 'From understanding to' }} <em>{{ isPt() ? 'validação real.' : 'real validation.' }}</em></h2><p>{{ isPt() ? 'Cada etapa reduz incertezas antes de ampliar o produto.' : 'Each step reduces uncertainty before the product expands.' }}</p></div><ol>@for (step of roadmap; track step.pt; let index = $index) { <li><span>0{{ index + 1 }}</span><p>{{ isPt() ? step.pt : step.en }}</p></li> }</ol></section>
+
+    <section class="cta shell"><p>{{ isPt() ? 'PROJETO EM PLANEJAMENTO' : 'PROJECT IN PLANNING' }}</p><h2>{{ isPt() ? 'Uma operação mais clara' : 'Clearer operations' }} <em>{{ isPt() ? 'começa por boas regras.' : 'begin with good rules.' }}</em></h2><a [href]="repositoryUrl" target="_blank" rel="noreferrer">{{ isPt() ? 'Acompanhar a documentação' : 'Follow the documentation' }} <span>↗</span></a></section>
+  </main>
+
+  <footer><a routerLink="/">← {{ isPt() ? 'Portfólio' : 'Portfolio' }}</a><span>Andreus Vinicius · Web responsiva · Firebase</span></footer>
+</ion-content>
