@@ -57,9 +57,10 @@ export const PROJECTS: PortfolioProject[] = [
   },
   {
     slug: 'assistente-laudos', number: '05',
-    title: { pt: 'Assistente de Orçamento e Laudo', en: 'Quote & Report Assistant' },
-    problem: { pt: 'Prestadores perdem horas transformando anotações em documentos profissionais.', en: 'Service providers spend hours turning notes into professional documents.' },
-    solution: { pt: 'Cria laudo revisável local ou com Gemini e exporta um orçamento profissional em PDF.', en: 'Creates an editable local or Gemini-assisted report and exports a professional priced PDF.' },
-    stack: ['Python', 'Streamlit', 'Gemini'], status: 'available', repositoryUrl: 'https://github.com/AvinSSSS/AssistenteOrcamentoLaudo',
+    title: { pt: 'Orçamento & Laudo', en: 'Quote & Report' },
+    problem: { pt: 'Profissionais técnicos perdem tempo organizando clientes, preços, orçamentos e laudos em ferramentas separadas.', en: 'Technical professionals lose time managing clients, prices, quotes and reports across separate tools.' },
+    solution: { pt: 'Aplicativo Android offline-first para organizar o atendimento e gerar documentos profissionais no próprio aparelho.', en: 'An offline-first Android app for organizing service work and creating professional documents directly on the device.' },
+    stack: ['Ionic', 'Angular', 'Capacitor', 'SQLite'], status: 'building',
+    caseStudyPath: '/projetos/orcamento-laudo',
   },
 ];

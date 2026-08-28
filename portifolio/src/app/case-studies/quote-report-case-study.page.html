@@ -1,0 +1,57 @@
+<ion-content>
+  <header class="case-header">
+    <a routerLink="/" class="back">← {{ isPt() ? 'Voltar ao portfólio' : 'Back to portfolio' }}</a>
+    <button type="button" (click)="language.toggle()" [attr.aria-label]="isPt() ? 'Mudar para inglês' : 'Switch to Portuguese'">{{ isPt() ? 'EN' : 'PT' }}</button>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow"><span></span>{{ isPt() ? 'APLICATIVO ANDROID · EM TESTES' : 'ANDROID APP · IN TESTING' }}</p>
+        <h1>{{ isPt() ? 'Orçamento' : 'Quote' }} <em>&amp; {{ isPt() ? 'Laudo' : 'Report' }}</em></h1>
+        <p class="lead">{{ isPt() ? 'Seu trabalho técnico, organizado no aparelho. Do primeiro cadastro ao PDF pronto para apresentar ao cliente.' : 'Your technical work, organized on your phone. From the first client record to a polished PDF ready to share.' }}</p>
+        <div class="actions">
+          <button class="store-button" type="button" disabled aria-disabled="true"><span class="play-mark">▶</span><span><small>{{ isPt() ? 'EM BREVE NO' : 'COMING SOON TO' }}</small>Google Play</span></button>
+          <a href="#aplicativo">{{ isPt() ? 'Conhecer o aplicativo' : 'Discover the app' }} <span>↓</span></a>
+        </div>
+        <p class="testing-note"><span></span>{{ isPt() ? 'Testes internos em andamento. Ainda não disponível para download.' : 'Internal testing in progress. Not yet available for download.' }}</p>
+      </div>
+      <div class="hero-meta">
+        <div><span>{{ isPt() ? 'PLATAFORMA' : 'PLATFORM' }}</span><strong>Android</strong></div>
+        <div><span>STACK</span><strong>Ionic · Angular · Capacitor</strong></div>
+        <div><span>STATUS</span><strong class="testing">● {{ isPt() ? 'Em testes internos' : 'Internal testing' }}</strong></div>
+        <div><span>{{ isPt() ? 'PUBLICAÇÃO' : 'RELEASE' }}</span><strong>Google Play</strong></div>
+      </div>
+    </section>
+
+    <section id="aplicativo" class="problem shell split">
+      <div><p class="section-index">01 / {{ isPt() ? 'O APLICATIVO' : 'THE APP' }}</p><h2>{{ isPt() ? 'Menos tempo organizando.' : 'Less time organizing.' }} <em>{{ isPt() ? 'Mais tempo atendendo.' : 'More time delivering.' }}</em></h2></div>
+      <div class="copy"><p>{{ isPt() ? 'Profissionais técnicos costumam alternar entre agenda, calculadora, anotações e editores de texto para concluir um único atendimento. No fim, informações se perdem e o documento que chega ao cliente nem sempre representa a qualidade do serviço executado.' : 'Technical professionals often switch between calendars, calculators, notes and document editors to complete a single job. Information gets lost, and the document delivered to the client does not always reflect the quality of the work.' }}</p><p>{{ isPt() ? 'Orçamento & Laudo reúne clientes, preços, diagnósticos, itens e documentos em um fluxo pensado para o celular — com os dados profissionais sob controle do próprio usuário.' : 'Quote & Report brings clients, prices, diagnostics, line items and documents into a mobile-first workflow — with professional data under the user’s control.' }}</p></div>
+    </section>
+
+    <section class="app-carousel shell" aria-labelledby="carousel-title">
+      <div class="carousel-heading"><div><p class="section-index">02 / {{ isPt() ? 'PRIMEIRAS TELAS' : 'FIRST LOOK' }}</p><h2 id="carousel-title">{{ isPt() ? 'Simples desde o' : 'Simple from the' }} <em>{{ isPt() ? 'primeiro acesso.' : 'first sign-in.' }}</em></h2></div><div class="carousel-arrows"><button type="button" (click)="previousSlide()" [attr.aria-label]="isPt() ? 'Tela anterior' : 'Previous screen'">←</button><button type="button" (click)="nextSlide()" [attr.aria-label]="isPt() ? 'Próxima tela' : 'Next screen'">→</button></div></div>
+      <div class="carousel-window">
+        <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide() * 100 + '%)'">
+          @for (screenshot of screenshots; track screenshot.src; let index = $index) {
+            <figure [attr.aria-hidden]="currentSlide() !== index"><div class="phone-frame"><img [src]="screenshot.src" [alt]="isPt() ? screenshot.ptAlt : screenshot.enAlt"></div><figcaption><span>0{{ index + 1 }}</span>{{ isPt() ? screenshot.ptTitle : screenshot.enTitle }}</figcaption></figure>
+          }
+        </div>
+      </div>
+      <div class="carousel-dots" role="group" [attr.aria-label]="isPt() ? 'Escolher tela' : 'Choose screen'">@for (screenshot of screenshots; track screenshot.src; let index = $index) { <button type="button" [class.active]="currentSlide() === index" (click)="goToSlide(index)" [attr.aria-label]="(isPt() ? 'Mostrar tela ' : 'Show screen ') + (index + 1)" [attr.aria-current]="currentSlide() === index ? 'true' : null"></button> }</div>
+      <p class="slide-status" aria-live="polite">{{ currentSlide() + 1 }} / {{ screenshots.length }} · {{ isPt() ? screenshots[currentSlide()].ptTitle : screenshots[currentSlide()].enTitle }}</p>
+    </section>
+
+    <section class="features shell"><p class="section-index">03 / {{ isPt() ? 'O QUE ELE RESOLVE' : 'WHAT IT SOLVES' }}</p><div class="section-heading"><h2>{{ isPt() ? 'Todo o atendimento em' : 'The complete workflow in' }}<br><em>{{ isPt() ? 'um só lugar.' : 'one place.' }}</em></h2><p>{{ isPt() ? 'Uma rotina mais organizada para apresentar propostas claras, registrar o diagnóstico e entregar um documento profissional.' : 'A more organized workflow for presenting clear proposals, recording diagnostics and delivering a professional document.' }}</p></div><div class="feature-grid">@for (feature of features; track feature.pt; let index = $index) { <div><span>0{{ index + 1 }}</span><p>{{ isPt() ? feature.pt : feature.en }}</p></div> }</div></section>
+
+    <section id="tecnicas" class="techniques shell"><p class="section-index">04 / {{ isPt() ? 'POR TRÁS DO APLICATIVO' : 'BEHIND THE APP' }}</p><h2>{{ isPt() ? 'Praticidade no uso.' : 'Practical to use.' }} <em>{{ isPt() ? 'Responsabilidade na construção.' : 'Responsible by design.' }}</em></h2><div class="tech-list">@for (technique of techniques; track technique.number) { <article><span class="number">{{ technique.number }}</span><div><h3>{{ isPt() ? technique.ptTitle : technique.enTitle }}</h3><p>{{ isPt() ? technique.ptText : technique.enText }}</p><code>{{ technique.code }}</code></div></article> }</div></section>
+
+    <section class="privacy shell split"><div><p class="section-index">05 / {{ isPt() ? 'PRIVACIDADE' : 'PRIVACY' }}</p><h2>{{ isPt() ? 'Seus dados profissionais' : 'Your professional data' }} <em>{{ isPt() ? 'ficam com você.' : 'stays with you.' }}</em></h2></div><div class="copy"><p>{{ isPt() ? 'Clientes, endereços, preços personalizados, orçamentos e laudos permanecem no aparelho. A nuvem é usada apenas onde agrega valor: autenticação, catálogo-base e redação opcional com consentimento.' : 'Clients, addresses, custom prices, quotes and reports remain on the device. Cloud services are used only where they add value: authentication, the base catalog and optional consent-based drafting.' }}</p><p>{{ isPt() ? 'A sugestão com Gemini nunca calcula valores e não substitui a revisão profissional. Totais são determinísticos e o texto sempre pode ser editado antes do PDF.' : 'Gemini-assisted drafting never calculates prices and never replaces professional review. Totals are deterministic and text can always be edited before the PDF.' }}</p></div></section>
+
+    <section class="quality shell"><p class="section-index">06 / {{ isPt() ? 'CAMINHO DE PUBLICAÇÃO' : 'RELEASE PATH' }}</p><div class="quality-grid"><article><strong>Android</strong><p>{{ isPt() ? 'experiência criada para o aparelho' : 'a device-first experience' }}</p></article><article><strong>Offline-first</strong><p>{{ isPt() ? 'rotina principal sem conexão constante' : 'core workflow without constant connectivity' }}</p></article><article><strong>Testes</strong><p>{{ isPt() ? 'validação antes da versão pública' : 'validation before public release' }}</p></article><article><strong>Google Play</strong><p>{{ isPt() ? 'publicação planejada após os testes' : 'planned release after testing' }}</p></article></div></section>
+
+    <section class="cta shell"><p>{{ isPt() ? 'EM TESTES INTERNOS' : 'IN INTERNAL TESTING' }}</p><h2>{{ isPt() ? 'Em breve, seu trabalho técnico' : 'Soon, your technical work' }} <em>{{ isPt() ? 'organizado no aparelho.' : 'organized on your phone.' }}</em></h2><button class="store-button large" type="button" disabled aria-disabled="true"><span class="play-mark">▶</span><span><small>{{ isPt() ? 'EM BREVE NO' : 'COMING SOON TO' }}</small>Google Play</span></button><p class="release-copy">{{ isPt() ? 'O download será liberado aqui assim que os testes forem concluídos.' : 'The download will be available here as soon as testing is complete.' }}</p></section>
+  </main>
+
+  <footer><a routerLink="/">← {{ isPt() ? 'Portfólio' : 'Portfolio' }}</a><span>Andreus Vinicius · Ionic · Angular · Android</span></footer>
+</ion-content>

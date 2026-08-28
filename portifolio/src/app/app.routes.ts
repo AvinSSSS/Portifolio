@@ -18,6 +18,10 @@ export const routes: Routes = [
     loadComponent: () => import('./case-studies/discord-bot-case-study.page').then((m) => m.DiscordBotCaseStudyPage),
   },
   {
+    path: 'projetos/orcamento-laudo',
+    loadComponent: () => import('./case-studies/quote-report-case-study.page').then((m) => m.QuoteReportCaseStudyPage),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
