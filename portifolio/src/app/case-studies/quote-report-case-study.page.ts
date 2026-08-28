@@ -4,7 +4,6 @@ import { IonContent } from '@ionic/angular/standalone';
 import { LanguageService } from '../core/language.service';
 
 interface Screenshot { src: string; ptTitle: string; enTitle: string; ptAlt: string; enAlt: string; }
-interface Technique { number: string; ptTitle: string; enTitle: string; ptText: string; enText: string; code: string; }
 
 @Component({
   standalone: true,
@@ -28,13 +27,11 @@ export class QuoteReportCaseStudyPage {
     { pt: 'Texto manual ou sugestão opcional com Gemini', en: 'Manual text or optional Gemini-assisted drafts' },
     { pt: 'Dados comerciais e pessoais mantidos localmente', en: 'Business and personal data kept locally' },
   ];
-  readonly techniques: Technique[] = [
-    { number: '01', ptTitle: 'Offline-first com SQLite', enTitle: 'Offline-first with SQLite', ptText: 'Clientes, preços, orçamentos e laudos permanecem no dispositivo e continuam acessíveis sem depender de uma conexão constante.', enText: 'Clients, prices, quotes and reports remain on the device and stay accessible without requiring a constant connection.', code: 'Capacitor SQLite · dados por usuário · operação local' },
-    { number: '02', ptTitle: 'Privacidade por arquitetura', enTitle: 'Privacy by architecture', ptText: 'Nome, documento, endereço e valores não são enviados ao Gemini. Quando autorizado, somente os campos técnicos necessários seguem para a API.', enText: 'Names, documents, addresses and prices are never sent to Gemini. When authorized, only the required technical fields reach the API.', code: 'consentimento explícito · dados mínimos · secrets no servidor' },
-    { number: '03', ptTitle: 'Identidade e recuperação', enTitle: 'Identity and recovery', ptText: 'O Firebase Authentication protege o acesso com e-mail, Google e recuperação de senha, enquanto os dados profissionais continuam armazenados no aparelho.', enText: 'Firebase Authentication protects access through email, Google and password recovery while professional data remains stored on the device.', code: 'Firebase Auth · Google Sign-In · reset por e-mail' },
-    { number: '04', ptTitle: 'Documentos determinísticos', enTitle: 'Deterministic documents', ptText: 'Valores e totais são calculados pela aplicação. O texto do laudo pode ser revisado antes de o PDF ser gerado e compartilhado.', enText: 'Prices and totals are calculated by the app. Report text can be reviewed before the PDF is generated and shared.', code: 'pdfmake · revisão humana · compartilhamento nativo' },
-    { number: '05', ptTitle: 'Serviço protegido e mensurável', enTitle: 'Protected, measurable service', ptText: 'Uma API FastAPI protege a chave do Gemini, valida identidade, controla cotas e diferencia falhas reais de gerações consumidas.', enText: 'A FastAPI service protects the Gemini key, validates identity, controls quotas and distinguishes actual failures from consumed generations.', code: 'FastAPI · App Check · rate limit · quotas' },
-    { number: '06', ptTitle: 'Caminho para a Play Store', enTitle: 'Play Store delivery path', ptText: 'O projeto inclui aplicativo Android nativo via Capacitor, geração de AAB, testes automatizados e integração preparada para recursos da Google Play.', enText: 'The project includes a Capacitor-powered native Android app, AAB generation, automated tests and integration prepared for Google Play capabilities.', code: 'Android · AAB · Play Billing · CI' },
+  readonly results = [
+    { ptTitle: 'Mais agilidade', enTitle: 'Move faster', ptText: 'Reaproveite clientes e preços para montar o próximo atendimento sem começar do zero.', enText: 'Reuse clients and prices to prepare the next job without starting over.' },
+    { ptTitle: 'Melhor apresentação', enTitle: 'Look professional', ptText: 'Entregue um PDF claro que valoriza o diagnóstico, o serviço e o preço apresentado.', enText: 'Deliver a clear PDF that gives proper weight to the diagnosis, service and price.' },
+    { ptTitle: 'Tudo organizado', enTitle: 'Stay organized', ptText: 'Mantenha clientes, orçamentos e laudos reunidos no aparelho usado durante o trabalho.', enText: 'Keep clients, quotes and reports together on the device used in the field.' },
+    { ptTitle: 'Menos retrabalho', enTitle: 'Reduce rework', ptText: 'Revise o texto e os itens antes de compartilhar, evitando refazer documentos em outras ferramentas.', enText: 'Review text and line items before sharing instead of rebuilding documents elsewhere.' },
   ];
 
   constructor(readonly language: LanguageService) {}
