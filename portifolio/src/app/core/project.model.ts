@@ -31,11 +31,12 @@ export const PROJECTS: PortfolioProject[] = [
   },
   {
     slug: 'controle-recebimentos', number: '02',
-    title: { pt: 'Controle de Recebimento de Entregadores', en: 'Delivery Receiving Control' },
-    problem: { pt: 'Previsões, atrasos e recebimentos parciais ficam dispersos em anotações e planilhas difíceis de acompanhar.', en: 'Expected deliveries, delays and partial receipts become scattered across notes and hard-to-track spreadsheets.' },
-    solution: { pt: 'Planejamento de uma agenda visual para controlar transportadoras, recebimentos, saldos e histórico.', en: 'A planned visual schedule for managing carriers, receipts, outstanding balances and history.' },
-    stack: ['Web responsiva', 'Firebase', 'Excel'], status: 'planned',
+    title: { pt: 'RotaPaga', en: 'RotaPaga' },
+    problem: { pt: 'Valores a receber, regras de transportadoras e atrasos se perdem em controles paralelos e conferências manuais.', en: 'Receivables, carrier rules and delays get lost across parallel controls and manual checks.' },
+    solution: { pt: 'Controle financeiro de recebimentos com regras automáticas, calendário, histórico e relatórios Excel.', en: 'Financial receiving control with automatic rules, calendar, history and Excel reports.' },
+    stack: ['React', 'TypeScript', 'Cloudflare D1', 'Firebase'], status: 'available',
     repositoryUrl: 'https://github.com/AvinSSSS/controle-recebimento-entregadores',
+    demoUrl: 'https://rotapaga.andreus-vin.chatgpt.site/',
     caseStudyPath: '/projetos/controle-recebimentos',
   },
   {
