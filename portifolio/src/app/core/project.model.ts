@@ -35,7 +35,6 @@ export const PROJECTS: PortfolioProject[] = [
     problem: { pt: 'Valores a receber, regras de transportadoras e atrasos se perdem em controles paralelos e conferências manuais.', en: 'Receivables, carrier rules and delays get lost across parallel controls and manual checks.' },
     solution: { pt: 'Controle financeiro de recebimentos com regras automáticas, calendário, histórico e relatórios Excel.', en: 'Financial receiving control with automatic rules, calendar, history and Excel reports.' },
     stack: ['React', 'TypeScript', 'Cloudflare D1', 'Firebase'], status: 'available',
-    repositoryUrl: 'https://github.com/AvinSSSS/controle-recebimento-entregadores',
     demoUrl: 'https://rotapaga.andreus-vin.chatgpt.site/',
     caseStudyPath: '/projetos/controle-recebimentos',
   },

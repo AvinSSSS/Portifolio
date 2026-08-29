@@ -13,7 +13,6 @@ interface Screenshot { src: string; ptTitle: string; enTitle: string; ptAlt: str
   imports: [IonContent, RouterLink],
 })
 export class DeliveryReceivingCaseStudyPage {
-  readonly repositoryUrl = 'https://github.com/AvinSSSS/controle-recebimento-entregadores';
   readonly productUrl = 'https://rotapaga.andreus-vin.chatgpt.site/';
   readonly currentSlide = signal(0);
   readonly screenshots: Screenshot[] = [

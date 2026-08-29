@@ -8,7 +8,6 @@ describe('DeliveryReceivingCaseStudyPage', () => {
     const fixture = TestBed.createComponent(DeliveryReceivingCaseStudyPage);
     const page = fixture.componentInstance;
     expect(page).toBeTruthy();
-    expect(page.repositoryUrl).toContain('controle-recebimento-entregadores');
     expect(page.productUrl).toContain('rotapaga.andreus-vin.chatgpt.site');
     expect(page.screenshots.length).toBe(5);
     expect(page.features.length).toBe(6);
