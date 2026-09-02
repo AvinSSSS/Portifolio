@@ -9,7 +9,7 @@ describe('DeliveryReceivingCaseStudyPage', () => {
     const page = fixture.componentInstance;
     expect(page).toBeTruthy();
     expect(page.productUrl).toContain('rotapaga.andreus-vin.chatgpt.site');
-    expect(page.screenshots.length).toBe(5);
+    expect(page.screenshots.length).toBe(6);
     expect(page.features.length).toBe(6);
   });
 
@@ -18,7 +18,7 @@ describe('DeliveryReceivingCaseStudyPage', () => {
     const page = TestBed.createComponent(DeliveryReceivingCaseStudyPage).componentInstance;
 
     page.previousSlide();
-    expect(page.currentSlide()).toBe(4);
+    expect(page.currentSlide()).toBe(5);
 
     page.nextSlide();
     expect(page.currentSlide()).toBe(0);

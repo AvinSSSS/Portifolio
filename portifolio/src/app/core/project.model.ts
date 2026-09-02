@@ -32,9 +32,9 @@ export const PROJECTS: PortfolioProject[] = [
   {
     slug: 'controle-recebimentos', number: '02',
     title: { pt: 'RotaPaga', en: 'RotaPaga' },
-    problem: { pt: 'Valores a receber, regras de transportadoras e atrasos se perdem em controles paralelos e conferências manuais.', en: 'Receivables, carrier rules and delays get lost across parallel controls and manual checks.' },
-    solution: { pt: 'Controle financeiro de recebimentos com regras automáticas, calendário, histórico e relatórios Excel.', en: 'Financial receiving control with automatic rules, calendar, history and Excel reports.' },
-    stack: ['React', 'TypeScript', 'Cloudflare D1', 'Firebase'], status: 'available',
+    problem: { pt: 'Entregadores e pequenas operações perdem previsibilidade ao controlar entregas, datas de pagamento e valores em planilhas ou anotações.', en: 'Drivers and small operations lose predictability when deliveries, payment dates and amounts are tracked in spreadsheets or notes.' },
+    solution: { pt: 'Aplicação web responsiva que conecta transportadoras, entregas, calendário, previsões financeiras e recursos Pro em um único fluxo.', en: 'A responsive web app connecting carriers, deliveries, calendars, financial forecasts and Pro features in one workflow.' },
+    stack: ['React', 'TypeScript', 'Cloudflare D1', 'Stripe', 'Firebase'], status: 'available',
     demoUrl: 'https://rotapaga.andreus-vin.chatgpt.site/',
     caseStudyPath: '/projetos/controle-recebimentos',
   },
