@@ -13,6 +13,7 @@ interface Screenshot { src: string; ptTitle: string; enTitle: string; ptAlt: str
   imports: [IonContent, RouterLink],
 })
 export class QuoteReportCaseStudyPage {
+  readonly playStoreUrl = 'https://play.google.com/store/apps/details?id=br.com.assistenteorcamentolaudo.app';
   readonly currentSlide = signal(0);
   readonly screenshots: Screenshot[] = [
     { src: 'assets/projects/orcamento-laudo/01-login.png', ptTitle: 'Acesso simples e protegido', enTitle: 'Simple, protected access', ptAlt: 'Tela de entrada do aplicativo Orçamento e Laudo', enAlt: 'Quote and Report app sign-in screen' },
@@ -20,18 +21,18 @@ export class QuoteReportCaseStudyPage {
     { src: 'assets/projects/orcamento-laudo/03-recuperar-senha.png', ptTitle: 'Recuperação de acesso', enTitle: 'Account recovery', ptAlt: 'Janela para recuperar a senha por e-mail', enAlt: 'Email password recovery dialog' },
   ];
   readonly features = [
-    { pt: 'Clientes e dados profissionais organizados no aparelho', en: 'Clients and professional details organized on the device' },
-    { pt: 'Tabela de preços personalizada para cada rotina de trabalho', en: 'Custom price lists for each professional workflow' },
-    { pt: 'Orçamentos e laudos técnicos no mesmo atendimento', en: 'Quotes and technical reports in the same workflow' },
-    { pt: 'PDF profissional pronto para salvar e compartilhar', en: 'Professional PDF ready to save and share' },
-    { pt: 'Texto manual ou sugestão opcional com Gemini', en: 'Manual text or optional Gemini-assisted drafts' },
-    { pt: 'Dados comerciais e pessoais mantidos localmente', en: 'Business and personal data kept locally' },
+    { pt: 'Clientes, perfil profissional, logotipo e tabela de preços personalizados', en: 'Clients, professional profile, logo and custom price lists' },
+    { pt: 'Orçamentos e laudos offline, com itens, quantidades, valores e histórico', en: 'Offline quotes and reports with items, quantities, amounts and history' },
+    { pt: 'PDF profissional e compartilhamento nativo, inclusive pelo WhatsApp', en: 'Professional PDFs and native sharing, including WhatsApp' },
+    { pt: 'Comando inteligente por texto ou voz para criar, localizar e gerar relatórios', en: 'Text or voice smart commands to create, find and generate reports' },
+    { pt: 'Painel com evolução mensal, situações, ticket médio e valores orçados', en: 'Dashboard with monthly trends, statuses, average ticket and quoted amounts' },
+    { pt: 'Premium com mais IA, experiência sem anúncios e assinatura pela Google Play', en: 'Premium with more AI, an ad-free experience and Google Play subscriptions' },
   ];
   readonly results = [
-    { ptTitle: 'Mais agilidade', enTitle: 'Move faster', ptText: 'Reaproveite clientes e preços para montar o próximo atendimento sem começar do zero.', enText: 'Reuse clients and prices to prepare the next job without starting over.' },
-    { ptTitle: 'Melhor apresentação', enTitle: 'Look professional', ptText: 'Entregue um PDF claro que valoriza o diagnóstico, o serviço e o preço apresentado.', enText: 'Deliver a clear PDF that gives proper weight to the diagnosis, service and price.' },
-    { ptTitle: 'Tudo organizado', enTitle: 'Stay organized', ptText: 'Mantenha clientes, orçamentos e laudos reunidos no aparelho usado durante o trabalho.', enText: 'Keep clients, quotes and reports together on the device used in the field.' },
-    { ptTitle: 'Menos retrabalho', enTitle: 'Reduce rework', ptText: 'Revise o texto e os itens antes de compartilhar, evitando refazer documentos em outras ferramentas.', enText: 'Review text and line items before sharing instead of rebuilding documents elsewhere.' },
+    { ptTitle: 'Atenda com agilidade', enTitle: 'Work faster', ptText: 'Reaproveite clientes, preços e catálogo para montar o próximo documento sem começar do zero.', enText: 'Reuse clients, prices and the catalog to prepare the next document without starting over.' },
+    { ptTitle: 'Apresente melhor', enTitle: 'Present better', ptText: 'Personalize e compartilhe PDFs claros que valorizam o diagnóstico, o serviço e o preço.', enText: 'Customize and share clear PDFs that give proper weight to diagnosis, service and price.' },
+    { ptTitle: 'Consulte sua rotina', enTitle: 'Understand your work', ptText: 'Acompanhe valores orçados por período, situação e serviço em tabelas ou gráficos.', enText: 'Track quoted amounts by period, status and service through tables or charts.' },
+    { ptTitle: 'Trabalhe offline', enTitle: 'Work offline', ptText: 'Clientes, preços e documentos permanecem disponíveis no aparelho durante o atendimento.', enText: 'Clients, prices and documents remain available on the device during service work.' },
   ];
 
   constructor(readonly language: LanguageService) {}

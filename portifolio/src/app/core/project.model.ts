@@ -24,9 +24,10 @@ export const PROJECTS: PortfolioProject[] = [
   {
     slug: 'assistente-laudos', number: '01',
     title: { pt: 'Orçamento & Laudo', en: 'Quote & Report' },
-    problem: { pt: 'Profissionais técnicos perdem tempo organizando clientes, preços, orçamentos e laudos em ferramentas separadas.', en: 'Technical professionals lose time managing clients, prices, quotes and reports across separate tools.' },
-    solution: { pt: 'Aplicativo Android offline-first para organizar o atendimento e gerar documentos profissionais no próprio aparelho.', en: 'An offline-first Android app for organizing service work and creating professional documents directly on the device.' },
-    stack: ['Ionic', 'Angular', 'Capacitor', 'SQLite'], status: 'building',
+    problem: { pt: 'Prestadores de serviços perdem tempo alternando entre cadastros, preços, documentos, relatórios e ferramentas separadas.', en: 'Service professionals lose time switching between customer records, prices, documents, reports and separate tools.' },
+    solution: { pt: 'Aplicativo Android offline-first para organizar clientes, criar orçamentos e laudos, gerar PDFs e acompanhar valores no próprio aparelho.', en: 'An offline-first Android app for organizing clients, creating quotes and reports, generating PDFs and tracking amounts on the device.' },
+    stack: ['Ionic', 'Angular', 'Capacitor', 'SQLite', 'FastAPI', 'Gemini'], status: 'available',
+    demoUrl: 'https://play.google.com/store/apps/details?id=br.com.assistenteorcamentolaudo.app',
     caseStudyPath: '/projetos/orcamento-laudo',
   },
   {

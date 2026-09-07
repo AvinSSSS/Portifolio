@@ -8,6 +8,7 @@ describe('QuoteReportCaseStudyPage', () => {
     const fixture = TestBed.createComponent(QuoteReportCaseStudyPage);
     const page = fixture.componentInstance;
     expect(page).toBeTruthy();
+    expect(page.playStoreUrl).toContain('br.com.assistenteorcamentolaudo.app');
     expect(page.screenshots.length).toBe(3);
     page.nextSlide();
     expect(page.currentSlide()).toBe(1);
