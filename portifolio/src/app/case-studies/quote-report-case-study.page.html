@@ -30,7 +30,7 @@
     </section>
 
     <section class="app-carousel shell" aria-labelledby="carousel-title">
-      <div class="carousel-heading"><div><p class="section-index">02 / {{ isPt() ? 'PRIMEIRAS TELAS' : 'FIRST LOOK' }}</p><h2 id="carousel-title">{{ isPt() ? 'Simples desde o' : 'Simple from the' }} <em>{{ isPt() ? 'primeiro acesso.' : 'first sign-in.' }}</em></h2></div><div class="carousel-arrows"><button type="button" (click)="previousSlide()" [attr.aria-label]="isPt() ? 'Tela anterior' : 'Previous screen'">←</button><button type="button" (click)="nextSlide()" [attr.aria-label]="isPt() ? 'Próxima tela' : 'Next screen'">→</button></div></div>
+      <div class="carousel-heading"><div><p class="section-index">02 / {{ isPt() ? 'O APLICATIVO EM USO' : 'THE APP IN USE' }}</p><h2 id="carousel-title">{{ isPt() ? 'Da rotina ao documento.' : 'From workflow to document.' }} <em>{{ isPt() ? 'Tudo conectado.' : 'Everything connected.' }}</em></h2></div><div class="carousel-arrows"><button type="button" (click)="previousSlide()" [attr.aria-label]="isPt() ? 'Tela anterior' : 'Previous screen'">←</button><button type="button" (click)="nextSlide()" [attr.aria-label]="isPt() ? 'Próxima tela' : 'Next screen'">→</button></div></div>
       <div class="carousel-window">
         <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide() * 100 + '%)'">
           @for (screenshot of screenshots; track screenshot.src; let index = $index) {

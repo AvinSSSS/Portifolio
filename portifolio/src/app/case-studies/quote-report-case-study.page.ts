@@ -16,9 +16,11 @@ export class QuoteReportCaseStudyPage {
   readonly playStoreUrl = 'https://play.google.com/store/apps/details?id=br.com.assistenteorcamentolaudo.app';
   readonly currentSlide = signal(0);
   readonly screenshots: Screenshot[] = [
-    { src: 'assets/projects/orcamento-laudo/01-login.png', ptTitle: 'Acesso simples e protegido', enTitle: 'Simple, protected access', ptAlt: 'Tela de entrada do aplicativo Orçamento e Laudo', enAlt: 'Quote and Report app sign-in screen' },
-    { src: 'assets/projects/orcamento-laudo/02-cadastro.png', ptTitle: 'Cadastro em poucos segundos', enTitle: 'Sign up in seconds', ptAlt: 'Tela de criação de conta do aplicativo', enAlt: 'App account creation screen' },
-    { src: 'assets/projects/orcamento-laudo/03-recuperar-senha.png', ptTitle: 'Recuperação de acesso', enTitle: 'Account recovery', ptAlt: 'Janela para recuperar a senha por e-mail', enAlt: 'Email password recovery dialog' },
+    { src: 'assets/projects/orcamento-laudo/01-visao-geral.png', ptTitle: 'Visão geral da rotina', enTitle: 'Workflow overview', ptAlt: 'Tela inicial do Orçamento e Laudo com ações rápidas, indicadores e comando inteligente', enAlt: 'Quote and Report home screen with quick actions, indicators and smart command' },
+    { src: 'assets/projects/orcamento-laudo/02-precos-catalogo.png', ptTitle: 'Preços e catálogo', enTitle: 'Prices and catalog', ptAlt: 'Tabela de preços personalizada e catálogo de referência do aplicativo', enAlt: 'App custom price list and reference catalog' },
+    { src: 'assets/projects/orcamento-laudo/03-editor-orcamento.png', ptTitle: 'Editor e compartilhamento', enTitle: 'Editor and sharing', ptAlt: 'Editor de orçamento com geração de PDF e envio pelo WhatsApp', enAlt: 'Quote editor with PDF generation and WhatsApp sharing' },
+    { src: 'assets/projects/orcamento-laudo/04-comando-inteligente.png', ptTitle: 'Comando inteligente', enTitle: 'Smart command', ptAlt: 'Comando inteligente para relatórios, novos orçamentos, buscas e painéis', enAlt: 'Smart command for reports, new quotes, searches and dashboards' },
+    { src: 'assets/projects/orcamento-laudo/05-premium.png', ptTitle: 'Recursos Premium', enTitle: 'Premium features', ptAlt: 'Recursos Premium com inteligência artificial, análises e experiência sem anúncios', enAlt: 'Premium features with artificial intelligence, analytics and an ad-free experience' },
   ];
   readonly features = [
     { pt: 'Clientes, perfil profissional, logotipo e tabela de preços personalizados', en: 'Clients, professional profile, logo and custom price lists' },

@@ -9,12 +9,12 @@ describe('QuoteReportCaseStudyPage', () => {
     const page = fixture.componentInstance;
     expect(page).toBeTruthy();
     expect(page.playStoreUrl).toContain('br.com.assistenteorcamentolaudo.app');
-    expect(page.screenshots.length).toBe(3);
+    expect(page.screenshots.length).toBe(5);
     page.nextSlide();
     expect(page.currentSlide()).toBe(1);
     page.previousSlide();
     expect(page.currentSlide()).toBe(0);
     page.previousSlide();
-    expect(page.currentSlide()).toBe(2);
+    expect(page.currentSlide()).toBe(4);
   });
 });
