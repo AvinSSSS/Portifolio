@@ -1,6 +1,6 @@
 <ion-content>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Andreus Vinicius — início"><span>AV</span> Andreus Vinicius</a>
+    <a class="brand" href="#top" [attr.aria-label]="isPt() ? 'Andreus Vinicius — início' : 'Andreus Vinicius — home'"><span>AV</span> Andreus Vinicius</a>
     <nav [attr.aria-label]="isPt() ? 'Navegação principal' : 'Main navigation'">
       <a href="#sobre">{{ isPt() ? 'Sobre' : 'About' }}</a>
       <a href="#projetos">{{ isPt() ? 'Projetos' : 'Projects' }}</a>
@@ -21,7 +21,7 @@
           <a class="button ghost" href="#contato">{{ isPt() ? 'Falar comigo' : 'Get in touch' }}</a>
         </div>
       </div>
-      <aside class="code-card reveal" aria-label="Resumo profissional">
+      <aside class="code-card reveal" [attr.aria-label]="isPt() ? 'Resumo profissional' : 'Professional summary'">
         <div class="code-card-bar"><i></i><i></i><i></i><span>solution.pas</span></div>
         <pre><code><b>type</b>
   TSolution = <b>record</b>
@@ -44,7 +44,7 @@
       <div class="about-copy">
         <p>{{ isPt() ? 'Sou desenvolvedor com anos de experiência construindo sistemas e automações. Minha especialidade é entender a dor, reduzir a complexidade e entregar uma ferramenta que funciona.' : 'I am a developer with years of experience building systems and automations. My specialty is understanding the pain, reducing complexity and delivering a tool that works.' }}</p>
         <p>{{ isPt() ? 'Trabalho com Delphi, Ionic, Angular, Node.js e Python, escolhendo a tecnologia pelo problema — não o contrário.' : 'I work with Delphi, Ionic, Angular, Node.js and Python, choosing technology for the problem — not the other way around.' }}</p>
-        <div class="skills" aria-label="Tecnologias">@for (skill of skills; track skill) { <span>{{ skill }}</span> }</div>
+        <div class="skills" [attr.aria-label]="isPt() ? 'Tecnologias' : 'Technologies'">@for (skill of skills; track skill) { <span>{{ skill }}</span> }</div>
       </div>
     </section>
 
