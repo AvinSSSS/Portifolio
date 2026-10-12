@@ -11,6 +11,7 @@ Vitrine profissional bilíngue de **Andreus Vinicius**, desenvolvedor focado em 
 ## ✨ O que você encontra aqui
 
 - Apresentação profissional em português e inglês.
+- Os rótulos acessíveis da página inicial acompanham a troca de idioma, sem recarregar a página.
 - Experiência, competências e processo de trabalho.
 - Catálogo tipado de cinco projetos com links para seus repositórios.
 - Acesso ao Hub de Calculadoras publicado em seu próprio projeto.
