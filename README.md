@@ -29,7 +29,7 @@ Vitrine profissional bilíngue de **Andreus Vinicius**, desenvolvedor focado em 
 
 ## 🛠️ Desenvolvimento local
 
-Requisitos: Node.js 22+ e npm 11+.
+Requisitos: Node.js 22 compatível com as dependências do lockfile, npm e Chrome para Karma/Jasmine. A CLI Angular fixada em [package-lock.json](portifolio/package-lock.json) aceita Node `^20.19.0 || ^22.12.0 || >=24.0.0` e npm `^6.11.0 || ^7.5.6 || >=8.0.0`; npm 11 não é obrigatório. Nesta revisão foram usados Node 22.17.1 e npm 10.9.2.
 
 ```bash
 cd portifolio
@@ -37,15 +37,26 @@ npm ci
 npm start
 ```
 
-A aplicação ficará disponível em `http://localhost:4200`.
+Execute os comandos a partir de `portifolio/`, tanto no checkout principal quanto em um worktree; a raiz do repositório não contém manifesto npm. `npm ci` instala as versões do lockfile. A aplicação ficará disponível em `http://localhost:4200`.
 
 ### Build e testes
 
-```bash
-cd portifolio
-npx ng build --configuration production --base-href /Portifolio/
-npx ng test --watch=false --browsers=ChromeHeadless
+Ainda em `portifolio/`, no PowerShell:
+
+```powershell
+$env:CHROME_BIN = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+npm.cmd test -- --watch=false --browsers=ChromeHeadless
+npm.cmd run build -- --configuration production --base-href /Portifolio/
+npm.cmd run lint
 ```
+
+Ajuste `CHROME_BIN` ao executável instalado; fora do Windows, use `npm` e a sintaxe de variável de ambiente do seu shell. O build grava `portifolio/www/` e usa produção por padrão. `npm start` usa desenvolvimento; [angular.json](portifolio/angular.json) substitui `src/environments/environment.ts` por `environment.prod.ts` no build de produção. Ambos definem apenas `production`; o fluxo web local não exige `.env` ou credenciais. Android/iOS exigem SDKs e validação separados.
+
+Os oito arquivos `*.spec.ts` em `portifolio/src/app/` contêm nove casos Jasmine: criação dos componentes/páginas, propriedades dos estudos de caso e navegação dos carrosséis de Orçamento e Laudo/RotaPaga. As fixtures são instâncias locais via TestBed, com `provideRouter([])` onde necessário; não é preciso cadastrar dados, iniciar banco ou acessar os produtos apresentados. URLs são conferidas como texto. Isso não valida links remotos, tradução completa, acessibilidade, navegação real nem os aplicativos descritos.
+
+Limitação verificada nesta revisão: `npm run lint` retorna oito erros existentes — sete de `@angular-eslint/prefer-inject` e um de `@angular-eslint/no-empty-lifecycle-method` no cabeçalho. O comando permanece como verificação, sem afirmar que o lint passa.
+
+Para uma conferência manual com dados sintéticos, use um perfil de navegador de teste, alterne PT/EN, visite os estudos de caso e avance/retorne os carrosséis. A preferência usa a chave `andreus-portfolio-language` do armazenamento local; sem valor `en`, o idioma inicial é português. Essa conferência manual não é coberta pelos testes de criação.
 
 ## 🗂️ Estrutura
 
@@ -55,7 +66,9 @@ Portifólio/
 ├── portifolio/src/app/      # Aplicação Ionic/Angular
 │   ├── core/                 # Idioma e modelo dos projetos
 │   ├── home/                 # Vitrine profissional
-│   └── home/                 # Vitrine e catálogo de projetos
+│   ├── components/header/    # Componente de cabeçalho
+│   ├── case-studies/         # Páginas dos estudos de caso e carrosséis
+│   └── app.routes.ts        # Rotas carregadas sob demanda e fallback
 ```
 
 Os repositórios dos projetos ficam separados em `D:\Fontes\Projetos`.
